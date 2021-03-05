@@ -45,13 +45,13 @@ try:
         #Use pixel value of  depth-aligned color image to get 3D axes
         x, y = 320, 180
         depth = getDepth(x,y,depth_frame)
-        distance = getDistance(x,y,color_intrin)
+        distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance)
         print("Z-depth from camera surface to P1 surface:", depth)
 
         x1, y1 = 400, 180
         depth1 = getDepth(x1,y1,depth_frame)
-        distance1 = getDistance(x1,y1,color_intrin)
+        distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1)
         print("Z-depth from camera surface to P2 surface:", depth1)
 
