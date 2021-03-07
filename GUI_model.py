@@ -71,9 +71,9 @@ def display(depth,depth1,pipeline):
     image1 = drawWords(images,330,160,str(depth))
 
 
-    image2 = drawCircle(images,500,180)
+    image2 = drawCircle(images,400,180)
     # image3 = drawWords(images,410,180,'P2')
-    image3 = drawWords(images,510,200,str(depth1))
+    image3 = drawWords(images,410,200,str(depth1))
 
 
     # Displaying the image 
