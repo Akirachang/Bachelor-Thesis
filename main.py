@@ -44,14 +44,14 @@ try:
         color_image = np.asanyarray(aligned_color_frame.get_data())
         #Use pixel value of  depth-aligned color image to get 3D axes
         x, y = 320, 180
-        depth = getDepth(x,y,depth_frame)
-        distance = getDistance(x,y,color_intrin,depth)
+        depth = getDepth(x,y,depth_frame)*100
+        distance = getDistance(x,y,color_intrin,depth)*100
         print("Distance from camera to P1:", distance)
         print("Z-depth from camera surface to P1 surface:", depth)
 
         x1, y1 = 500, 180
-        depth1 = getDepth(x1,y1,depth_frame)
-        distance1 = getDistance(x1,y1,color_intrin,depth1)
+        depth1 = getDepth(x1,y1,depth_frame)*100
+        distance1 = getDistance(x1,y1,color_intrin,depth1)*100
         print("Distance from camera to P2:", distance1)
         print("Z-depth from camera surface to P2 surface:", depth1)
 
