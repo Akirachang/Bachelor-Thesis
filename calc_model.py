@@ -8,5 +8,7 @@ def getDepth(x, y, depth_frame):
 
 def getDistance(x, y, color_intrin, depth):
     dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], depth)
+    print(dx)
+    print(dy)
     print(dz)
     return math.sqrt(((dx)**2) + ((dy)**2) + ((dz)**2))
