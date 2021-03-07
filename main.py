@@ -49,7 +49,7 @@ try:
         print("Distance from camera to P1:", distance*100)
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
-        x1, y1 = 600, 180
+        x1, y1 = 500, 180
         depth1 = getDepth(x1,y1,depth_frame)
         distance1 = getDistance(x1,y1,color_intrin,depth)
         print("Distance from camera to P2:", distance1*100)
