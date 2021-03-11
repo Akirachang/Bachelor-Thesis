@@ -44,7 +44,6 @@ def display(depth,depth1,pipeline):
     color_frame = frames.get_color_frame()
     if not depth_frame or not color_frame:
         return
-
     # Convert images to numpy arrays
     depth_image = np.asanyarray(depth_frame.get_data())
     color_image = np.asanyarray(color_frame.get_data())
