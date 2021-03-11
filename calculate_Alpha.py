@@ -56,10 +56,12 @@ try:
         print("Z-depth from camera surface to P2 surface:", depth1*100)
 
         #calculate Alpha angle
-        print((math.acos(depth/depth1)))
-        alpha = math.degrees((math.acos(depth/depth1)))
-        print(alpha)
-
+        try:
+            print((math.acos(depth/depth1)))
+            alpha = math.degrees((math.acos(depth/depth1)))
+            print(alpha)
+        except:
+            print("error value!")
         display(distance, distance1, pipeline)
 
 except Exception as e:
