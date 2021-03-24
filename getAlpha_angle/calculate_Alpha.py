@@ -83,7 +83,7 @@ except Exception as e:
 
 finally:
     #dumps into json file
-    with open("10cm.json", "w") as write_file:
+    with open("json/10cm.json", "w") as write_file:
         json.dump(angle_dict, write_file)
 
     pipeline.stop()
