@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '..')
+
 import pyrealsense2.pyrealsense2 as rs
 import numpy as np
 import math
