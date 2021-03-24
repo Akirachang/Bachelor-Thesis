@@ -36,7 +36,7 @@ angle_dict={}
 origin_x = 320
 
 try:
-    for i in range(80,100):
+    for i in range(100,200):
         sum = 0 #sum of all the angles combined
         for j in range(0,100):
             # This call waits until a new coherent set of frames is available on a device
