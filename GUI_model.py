@@ -37,7 +37,7 @@ def drawWords(images,x,y,point):
     # Using cv2.putText() method 
     return cv2.putText(images, point, org, font, fontScale, color, thickness, cv2.LINE_AA) 
 
-def display(depth,depth1,pipeline):
+def display(depth,depth1,pipeline,x1,y1):
     # Wait for a coherent pair of frames: depth and color
     frames = pipeline.wait_for_frames()
     depth_frame = frames.get_depth_frame()
@@ -70,9 +70,9 @@ def display(depth,depth1,pipeline):
     image1 = drawWords(images,330,160,str(depth))
 
 
-    image2 = drawCircle(images,400,180)
+    image2 = drawCircle(images,x1,y1)
     # image3 = drawWords(images,410,180,'P2')
-    image3 = drawWords(images,410,200,str(depth1))
+    image3 = drawWords(images,x1+10,y1+20,str(depth1))
 
 
     # Displaying the image 

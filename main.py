@@ -55,7 +55,7 @@ try:
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
 
-        display(distance, distance1, pipeline)
+        display(distance, distance1, pipeline, x1, y1)
 
 except Exception as e:
     print(e)

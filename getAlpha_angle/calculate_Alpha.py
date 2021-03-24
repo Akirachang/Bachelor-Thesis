@@ -71,6 +71,8 @@ try:
                 alpha = math.degrees((math.acos(depth/depth1)))
                 sum+=alpha
                 print("Alpha angle is: ",alpha)
+                display(distance, distance1, pipeline, x1, y1)
+
             except:
                 print("error value!")
         average = sum/100
