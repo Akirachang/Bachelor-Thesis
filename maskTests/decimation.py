@@ -48,12 +48,12 @@ try:
         ##MYCODE
 
         if not depth_frame or not aligned_color_frame: continue
-
+        ##MY CODE
         colorizer = rs.colorizer()
         decimation = rs.decimation_filter()
         decimationed_depth = decimation.process(depth_frame)
         colorized_depth = np.asanyarray(colorizer.colorize(decimationed_depth).get_data())
-
+        ##MY CODE
         color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
         depth_image = np.asanyarray(depth_frame.get_data())
         colorized_depth = np.asanyarray(colorizer.colorize(decimationed_depth).get_data())
@@ -65,13 +65,13 @@ try:
         print(type(decimationed_depth))
         print(type(depth_frame))
 
-        depth = getDepth(x,y,decimationed_depth)
+        depth = getDepth(x,y,depth_frame)
         distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance*100)
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
         x1, y1 = 400, 180
-        depth1 = getDepth(x1,y1,colorized_depth)
+        depth1 = getDepth(x1,y1,depth_frame)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
