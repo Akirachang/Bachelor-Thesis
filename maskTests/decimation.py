@@ -51,7 +51,7 @@ try:
         ##MY CODE
         colorizer = rs.colorizer()
         decimation = rs.decimation_filter()
-        decimation.set_option(rs.option.filter_magnitude,10)
+        decimation.set_option(rs.option.filter_magnitude,6)
         decimationed_depth = decimation.process(depth_frame)
         colorized_depth = np.asanyarray(colorizer.colorize(decimationed_depth).get_data())
         ##MY CODE
