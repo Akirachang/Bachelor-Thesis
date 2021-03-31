@@ -30,19 +30,22 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
-decimate = rs.decimation_filter(8)
 
 try:
     while True:
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
-        decimated = decimate.process(frames).as_frameset()
-        # Align the depth frame to color frame
-        aligned_frames = align.process(decimated)
-        # #Aligning color frame to depth frame
-        # aligned_frames =  align.process(frames)
+        
+        aligned_frames = align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
         aligned_color_frame = aligned_frames.get_color_frame()
+
+        ##MY CODE
+        colorizer = rs.colorizer()
+        decimation = rs.decimation_filter()
+        decimationed_depth = decimation.process(depth_frame)
+        colorized_depth = np.asanyarray(colorizer.colorize(decimationed_depth).get_data())
+        ##MYCODE
 
         if not depth_frame or not aligned_color_frame: continue
 
@@ -52,15 +55,14 @@ try:
         # dec_filter = rs.decimation_filter ()
         # filtered = dec_filter.process(depth_frame)
         #Use pixel value of  depth-aligned color image to get 3D axes
-        x, y = 100, 100
-        depth = getDepth(x,y,depth_frame)
-        print(type(depth_frame))
+        x, y = 320, 180
+        depth = getDepth(x,y,decimationed_depth)
         distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance*100)
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
-        x1, y1 = 200, 200
-        depth1 = getDepth(x1,y1,depth_frame)
+        x1, y1 = 400, 180
+        depth1 = getDepth(x1,y1,decimationed_depth)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
