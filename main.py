@@ -27,13 +27,19 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
+decimate = rs.decimation_filter(8)
+
 try:
     while True:
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         frames = frames.apply_filter(align).apply_filter(decimate);
-        #Aligning color frame to depth frame
-        aligned_frames =  align.process(frames)
+
+        decimated = decimate.process(frames).as_frameset()
+        # Align the depth frame to color frame
+        aligned_frames = align.process(decimated)
+        # #Aligning color frame to depth frame
+        # aligned_frames =  align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
         aligned_color_frame = aligned_frames.get_color_frame()
 
