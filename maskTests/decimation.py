@@ -60,13 +60,13 @@ try:
         print(type(decimationed_depth))
         print(type(depth_frame))
 
-        depth = getDepth(x,y,decimationed_depth)
+        depth = getDepth(x,y,colorized_depth)
         distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance*100)
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
         x1, y1 = 400, 180
-        depth1 = getDepth(x1,y1,decimationed_depth)
+        depth1 = getDepth(x1,y1,colorized_depth)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
