@@ -31,7 +31,7 @@ try:
     while True:
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
-        
+        frames = frames.apply_filter(align).apply_filter(decimate);
         #Aligning color frame to depth frame
         aligned_frames =  align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
