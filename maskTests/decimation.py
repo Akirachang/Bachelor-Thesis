@@ -56,6 +56,10 @@ try:
         # filtered = dec_filter.process(depth_frame)
         #Use pixel value of  depth-aligned color image to get 3D axes
         x, y = 320, 180
+
+        print(type(decimationed_depth))
+        print(type(depth_frame))
+
         depth = getDepth(x,y,decimationed_depth)
         distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance*100)
