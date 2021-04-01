@@ -30,7 +30,7 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
-distanceCM = 30
+distanceCM = 30.0
 pixel_cm = 0.0264583333 
 cm_pixel = 37.7952755906
 
