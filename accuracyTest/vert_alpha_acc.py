@@ -62,7 +62,7 @@ try:
         accuracy_virtDist = 100-100*((abs(accurateDistance-depth)/accurateDistance))
         print("accuracy of virtical distance is: ", accuracy_virtDist)
 
-        x1, y1 = 400, 180
+        x1, y1 = 440, 180
         depth1 = getDepth(x1,y1,depth_frame)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
