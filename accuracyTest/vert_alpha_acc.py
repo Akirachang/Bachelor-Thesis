@@ -81,7 +81,7 @@ try:
             display(distance, distance1, pipeline, x1, y1)
             print("accurate angle is: ",accurateDistance)
             print("alpha is: ",alpha)
-            accuracy_alpha = 100-100*((abs(accurateangle-alpha)/accurateangle))
+            accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
             print("accuracy of virtical distance is: ", accuracy_alpha)
 
         except:
