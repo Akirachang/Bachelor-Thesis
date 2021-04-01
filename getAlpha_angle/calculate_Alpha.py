@@ -67,8 +67,8 @@ try:
 
             #calculate Alpha angle
             try:
-                print((math.acos(depth/depth1)))
-                alpha = math.degrees((math.acos(depth/depth1)))
+                print((math.acos(distance/distance)))
+                alpha = math.degrees((math.acos(distance/distance1)))
                 sum+=alpha
                 print("Alpha angle is: ",alpha)
                 display(distance, distance1, pipeline, x1, y1)
