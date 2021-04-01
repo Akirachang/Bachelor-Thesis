@@ -74,18 +74,16 @@ try:
         accurateangle = math.degrees(math.atan(point_distance_cm/accurateDistance))
 
         #calcurate alpha angle
-        # try:
-        print((math.acos(depth/depth1)))
-        print("here")
-        alpha = math.degrees((math.acos(depth/depth1)))
-        sum+=alpha
-        print("Alpha angle is: ",alpha)
-        display(distance, distance1, pipeline, x1, y1)
-        accuracy_alpha = 100-100*((abs(accurateangle-alpha)/accurateangle))
-        print("accuracy of virtical distance is: ", accuracy_alpha)
+        try:
+            print((math.acos(depth/depth1)))
+            alpha = math.degrees((math.acos(depth/depth1)))
+            print("Alpha angle is: ",alpha)
+            display(distance, distance1, pipeline, x1, y1)
+            accuracy_alpha = 100-100*((abs(accurateangle-alpha)/accurateangle))
+            print("accuracy of virtical distance is: ", accuracy_alpha)
 
-        # except:
-        #     print("error value!")
+        except:
+            print("error value!")
 
 
         display(distance, distance1, pipeline, x1, y1)
