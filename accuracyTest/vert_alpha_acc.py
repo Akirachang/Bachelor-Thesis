@@ -76,6 +76,7 @@ try:
         #calcurate alpha angle
         # try:
         print((math.acos(depth/depth1)))
+        print("here")
         alpha = math.degrees((math.acos(depth/depth1)))
         sum+=alpha
         print("Alpha angle is: ",alpha)
