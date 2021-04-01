@@ -59,7 +59,7 @@ try:
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
         accurateDistance = distanceCM
-        accuracy_virtDist = 100-100*((abs(accurateDistance-depth)/accurateDistance))
+        accuracy_virtDist = 100-100*((abs(accurateDistance-distance)/accurateDistance))
 
         x1, y1 = 420, 180
         depth1 = getDepth(x1,y1,depth_frame)
