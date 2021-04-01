@@ -59,8 +59,7 @@ try:
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
         accurateDistance = distanceCM
-        # accuracy_virtDist = 100-100*((abs(accurateDistance-depth)/accurateDistance))
-        accuracy_virtDist = depth / accurateDistance
+        accuracy_virtDist = 100-100*((abs(accurateDistance-depth)/accurateDistance))
         print("accuracy of virtical distance is: ", accuracy_virtDist)
 
         x1, y1 = 420, 180
@@ -82,8 +81,7 @@ try:
             display(distance, distance1, pipeline, x1, y1)
             print("accurate angle is: ",accurateDistance)
             print("alpha is: ",alpha)
-            # accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
-            accuracy_alpha = alpha/accurateangle
+            accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
             print("accuracy of alpha is: ", accuracy_alpha)
 
         except:
