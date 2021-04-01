@@ -79,7 +79,7 @@ try:
             alpha = math.degrees((math.acos(distance/distance1)))
             print("Alpha angle is: ",alpha)
             display(distance, distance1, pipeline, x1, y1)
-            print("accurate angle is: ",accurateDistance)
+            print("accurate angle is: ",accurateangle)
             print("alpha is: ",alpha)
             accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
             print("accuracy of alpha is: ", accuracy_alpha)
