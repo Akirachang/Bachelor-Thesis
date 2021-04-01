@@ -68,8 +68,12 @@ try:
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
 
+        #my code
         Z_coordinate = distance * cm_pixel # coordinate of the Z axis according to distance to object
-        point_distance_px = math.sqrt(((x1-x)**2) + ((y1-y)**2) + ((0)**2))
+        
+        dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], distanceCM/100)
+        dx1 ,dy1, dz1 = rs.rs2_deproject_pixel_to_point(color_intrin, [x1,y1], distanceCM/100)
+        point_distance_px = math.sqrt(((dx-dx1)**2) + ((dy-dy1)**2) + ((dz-dz1)**2))
         point_distance_cm = point_distance_px * pixel_cm
         accurateangle = math.degrees(math.atan(point_distance_cm/accurateDistance))
 
