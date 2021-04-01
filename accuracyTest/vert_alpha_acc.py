@@ -74,8 +74,8 @@ try:
         dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], distanceCM/100)
         dx1 ,dy1, dz1 = rs.rs2_deproject_pixel_to_point(color_intrin, [x1,y1], distanceCM/100)
         point_distance_px = math.sqrt(((dx-dx1)**2) + ((dy-dy1)**2) + ((dz-dz1)**2))
-        point_distance_cm = point_distance_px * pixel_cm
-        accurateangle = math.degrees(math.atan(point_distance_cm/accurateDistance))
+        print("pdp is: ",point_distance_px)
+        accurateangle = math.degrees(math.atan(point_distance_px/accurateDistance))
 
         #calcurate alpha angle
         try:
