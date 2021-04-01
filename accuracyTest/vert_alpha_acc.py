@@ -75,10 +75,8 @@ try:
 
         #calcurate alpha angle
         try:
-            print(depth)
-            print(depth1)
-            print((math.acos(depth/depth1)))
-            alpha = math.degrees((math.acos(depth/depth1)))
+            print((math.acos(distance/distance1)))
+            alpha = math.degrees((math.acos(distance/distance1)))
             print("Alpha angle is: ",alpha)
             display(distance, distance1, pipeline, x1, y1)
             accuracy_alpha = 100-100*((abs(accurateangle-alpha)/accurateangle))
