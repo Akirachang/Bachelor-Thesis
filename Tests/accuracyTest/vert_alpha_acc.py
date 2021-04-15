@@ -30,7 +30,7 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
-distanceCM = int(input("enter a distance"))
+distanceCM = int(input("enter a distance: "))
 pixel_cm = 0.0264583333 
 cm_pixel = 37.7952755906
 
@@ -74,16 +74,15 @@ try:
         dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], distanceCM/100)
         dx1 ,dy1, dz1 = rs.rs2_deproject_pixel_to_point(color_intrin, [x1,y1], distanceCM/100)
         point_distance_px = math.sqrt(((dx-dx1)**2) + ((dy-dy1)**2) + ((dz-dz1)**2))
-        print("pdp is: ",point_distance_px)
-        print("ad is: ", accurateDistance/100)
+
         #the correct alpha angle
         accurateangle = math.degrees(math.atan(point_distance_px/(accurateDistance/100)))
 
         #calcurate alpha angle
         try:
-            print("calculated angle is: ", (math.acos(distance/distance1)))
             print("correct angle is: ", accurateangle)
             alpha = math.degrees((math.acos(distance/distance1)))
+            print("calculated angle is: ", alpha)
             # print("Alpha angle is: ",alpha)
             display(distance, distance1, pipeline, x1, y1)
             # print("accurate angle is: ",accurateangle)
