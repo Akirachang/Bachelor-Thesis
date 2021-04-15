@@ -30,7 +30,7 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
-distanceCM = input("enter a distance")
+distanceCM = int(input("enter a distance"))
 pixel_cm = 0.0264583333 
 cm_pixel = 37.7952755906
 
