@@ -67,7 +67,7 @@ try:
 
             #calculate Alpha angle
             try:
-                print((math.acos(distance/distance)))
+                print((math.acos(distance/distance1)))
                 alpha = math.degrees((math.acos(distance/distance1)))
                 sum+=alpha
                 print("Alpha angle is: ",alpha)
