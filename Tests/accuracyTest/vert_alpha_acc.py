@@ -30,7 +30,7 @@ pipeline.start(config)
 align_to = rs.stream.depth
 align = rs.align(align_to)
 
-distanceCM = 30.0
+distanceCM = input("enter a distance")
 pixel_cm = 0.0264583333 
 cm_pixel = 37.7952755906
 
@@ -80,7 +80,8 @@ try:
 
         #calcurate alpha angle
         try:
-            print((math.acos(distance/distance1)))
+            print("calculated angle is: ", (math.acos(distance/distance1)))
+            print("correct angle is: ", accurateangle)
             alpha = math.degrees((math.acos(distance/distance1)))
             # print("Alpha angle is: ",alpha)
             display(distance, distance1, pipeline, x1, y1)
