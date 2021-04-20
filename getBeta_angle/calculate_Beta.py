@@ -85,7 +85,7 @@ try:
         #calculate Alpha angle
         try:
             print("hi")
-            BetaAngle = math.degrees(math.atan((math.cos(alpha)*y1-x)/(math.sin(alpha)*y1)))
+            BetaAngle = math.degrees(math.atan((math.cos(alpha)*distance1-distance)/(math.sin(alpha)*distance1)))
             print("*****Beta angle is ", BetaAngle)
         except:
             print("error value!")
