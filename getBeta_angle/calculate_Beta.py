@@ -54,7 +54,7 @@ print(dict_alpha)
 x1 = 420
 y1 = 180
 
-alpha = dict_alpha[x1]
+alpha = dict_alpha[str(x1)]
 
 #****************************************************
 
