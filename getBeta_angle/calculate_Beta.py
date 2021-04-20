@@ -41,7 +41,7 @@ origin_x = 320
 origin_x = 320
 
 #distance from camera to the flat surface
-dist_cam_surface = 20
+dist_cam_surface =40
 
 #open the json file from Alpha angle json file and convert to dict 
 #TODO
