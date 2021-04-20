@@ -47,59 +47,56 @@ dist_cam_surface = 20
 #TODO
 alpha_file = open('../getAlpha_angle/json/'+str(dist_cam_surface)+'cm.json')
 dict_alpha = json.load(alpha_file)
-
 print(dict_alpha)
 
 #the pixel i want to use from the json file
 #TODO
+x1 = 400
+y1 = 180
+
+alpha = dict_alpha[x1]
 
 #****************************************************
 
-# try:
-#         # This call waits until a new coherent set of frames is available on a device
-#         frames = pipeline.wait_for_frames()
+try:
+        # This call waits until a new coherent set of frames is available on a device
+        frames = pipeline.wait_for_frames()
         
-#         #Aligning color frame to depth frame
-#         aligned_frames =  align.process(frames)
-#         depth_frame = aligned_frames.get_depth_frame()
-#         aligned_color_frame = aligned_frames.get_color_frame()
+        #Aligning color frame to depth frame
+        aligned_frames =  align.process(frames)
+        depth_frame = aligned_frames.get_depth_frame()
+        aligned_color_frame = aligned_frames.get_color_frame()
 
-#         color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
-#         depth_image = np.asanyarray(depth_frame.get_data())
-#         color_image = np.asanyarray(aligned_color_frame.get_data())
-#         #Use pixel value of  depth-aligned color image to get 3D axes
-#         x, y = 320, 180
-#         depth = getDepth(x,y,depth_frame)
-#         distance = getDistance(x,y,color_intrin,depth)
-#         print("Distance from camera to P1:", distance*100)
-#         print("Z-depth from camera surface to P1 surface:", depth*100)
+        color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
+        depth_image = np.asanyarray(depth_frame.get_data())
+        color_image = np.asanyarray(aligned_color_frame.get_data())
+        #Use pixel value of  depth-aligned color image to get 3D axes
+        x, y = 320, 180
+        depth = getDepth(x,y,depth_frame)
+        distance = getDistance(x,y,color_intrin,depth)
+        print("Distance from camera to P1:", distance*100)
+        print("Z-depth from camera surface to P1 surface:", depth*100)
 
-#         x1, y1 = origin_x+i, 180
-#         depth1 = getDepth(x1,y1,depth_frame)
-#         distance1 = getDistance(x1,y1,color_intrin,depth1)
-#         print("Distance from camera to P2:", distance1*100)
-#         print("Z-depth from camera surface to P2 surface:", depth1*100)
+        depth1 = getDepth(x1,y1,depth_frame)
+        distance1 = getDistance(x1,y1,color_intrin,depth1)
+        print("Distance from camera to P2:", distance1*100)
+        print("Z-depth from camera surface to P2 surface:", depth1*100)
 
-#         #calculate Alpha angle
-#         try:
-#             print((math.acos(distance/distance1)))
-#             alpha = math.degrees((math.acos(distance/distance1)))
-#             sum+=alpha
-#             print("Alpha angle is: ",alpha)
-#             display(distance, distance1, pipeline, x1, y1)
-#         except:
-#             print("error value!")
-#     average = sum/100
-#     angle_dict[origin_x+i] = average
-# print(angle_dict)
+        #calculate Alpha angle
+        try:
+            print("hi")
+            BetaAngle = math.degrees(math.atan((math.cos(alpha)*y1-x)/(math.sin(alpha)*y1)))
+            print("*****Beta angle is ", BetaAngle)
+        except:
+            print("error value!")
+    
+except Exception as e:
+    print(e)
+    pass
 
-# except Exception as e:
-#     print(e)
-#     pass
+finally:
+    #dumps into json file
+    with open("json/80cm.json", "w") as write_file:
+        json.dump(angle_dict, write_file)
 
-# finally:
-#     #dumps into json file
-#     with open("json/80cm.json", "w") as write_file:
-#         json.dump(angle_dict, write_file)
-
-#     pipeline.stop()
+    pipeline.stop()
