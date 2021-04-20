@@ -36,7 +36,7 @@ angle_dict={}
 origin_x = 320
 
 try:
-    for i in range(100,150):
+    for i in range(100,150): #starting from 60cm, only extract 100-150 points. but others extract 100-200
         sum = 0 #sum of all the angles combined
         for j in range(0,100):
             # This call waits until a new coherent set of frames is available on a device
@@ -84,7 +84,7 @@ except Exception as e:
 
 finally:
     #dumps into json file
-    with open("json/60cm.json", "w") as write_file:
+    with open("json/70cm.json", "w") as write_file:
         json.dump(angle_dict, write_file)
 
     pipeline.stop()
