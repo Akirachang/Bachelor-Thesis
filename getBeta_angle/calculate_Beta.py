@@ -54,7 +54,7 @@ print(dict_alpha)
 x1 = 420
 y1 = 180
 
-alpha = dict_alpha[str(x1)]
+alpha = math.radians(dict_alpha[str(x1)])
 
 #****************************************************
 
@@ -85,7 +85,7 @@ try:
         #calculate Alpha angle
         try:
             print("hi")
-            BetaAngle = math.degrees(math.atan((math.cos(alpha)*distance1-distance)/(math.sin(alpha)*distance1)))
+            BetaAngle = math.degrees(math.atan((math.cos(alpha)*distance1-depth)/(math.sin(alpha)*distance1)))
             print("*****Beta angle is ", BetaAngle)
         except:
             print("error value!")
