@@ -51,7 +51,7 @@ print(dict_alpha)
 
 #the pixel i want to use from the json file
 #TODO
-x1 = 400
+x1 = 420
 y1 = 180
 
 alpha = dict_alpha[x1]
