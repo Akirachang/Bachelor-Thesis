@@ -36,8 +36,10 @@ try:
         aligned_frames =  align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
         aligned_color_frame = aligned_frames.get_color_frame()
+        print(type(aligned_frames))
         decimation = rs.decimation_filter()
         decimated_depth = decimation.process(depth_frame)
+        print(type(decimated_depth))
         decimated_depth_frames = decimated_depth.get_depth_frame()
         if not depth_frame or not aligned_color_frame: continue
 
