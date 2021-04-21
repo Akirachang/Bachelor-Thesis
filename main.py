@@ -24,7 +24,7 @@ else:
 # Start streaming
 prof = pipeline.start(config)
 s = prof.get_device().query_sensors()[1]
-s.set_option(rs.option.exposure, 1000)
+s.set_option(rs.option.exposure, 9000)
 
 align_to = rs.stream.depth
 align = rs.align(align_to)
