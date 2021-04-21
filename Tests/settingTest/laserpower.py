@@ -28,7 +28,7 @@ else:
 #***OPTION SETTING***
 profile = pipeline.start(config)
 s = profile.get_device().query_sensors()[1]
-s = s.set_option(rs.option.laser_power, 150)
+s = s.set_option(rs.option.gamma, 150)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
