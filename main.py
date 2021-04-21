@@ -22,11 +22,7 @@ else:
     config.enable_stream(rs.stream.color, 640, 360, rs.format.bgr8, 15)
 
 # Start streaming
-#***OPTION SETTING***
-prof = pipeline.start(config)
-s = prof.get_device().query_sensors()[1]
-s.set_option(rs.option.exposure, 9000)
-#***OPTION SETTING***
+pipeline.start(config)
 
 align_to = rs.stream.depth
 align = rs.align(align_to)
@@ -40,13 +36,7 @@ try:
         aligned_frames =  align.process(frames)
         depth_frame = aligned_frames.get_depth_frame()
         aligned_color_frame = aligned_frames.get_color_frame()
-        print(type(aligned_frames))
 
-
-        # decimation = rs.decimation_filter()
-        # decimated_depth = decimation.process(depth_frame)
-        # print(type(decimated_depth))
-        # decimated_depth_frames = decimated_depth.get_depth_frame()
         if not depth_frame or not aligned_color_frame: continue
 
         color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
