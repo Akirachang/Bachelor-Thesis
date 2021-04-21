@@ -27,8 +27,8 @@ else:
 # Start streaming
 #***OPTION SETTING***
 profile = pipeline.start(config)
-sensor_dep = profile.get_device().first_depth_sensor()
-s = sensor_dep.set_option(rs.option.exposure, 1000)
+s = profile.get_device().query_sensors()[1]
+s = s.set_option(rs.option.exposure, 1000)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
