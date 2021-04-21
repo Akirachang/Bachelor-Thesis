@@ -28,7 +28,7 @@ else:
 #***OPTION SETTING***
 profile = pipeline.start(config)
 s = profile.get_device().query_sensors()[1]
-s = s.set_option(rs.option.gain, 248)
+s = s.set_option(rs.option.gain, 200)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
