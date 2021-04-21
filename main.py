@@ -37,7 +37,7 @@ try:
         depth_frame = aligned_frames.get_depth_frame()
         aligned_color_frame = aligned_frames.get_color_frame()
         decimation = rs.decimation_filter()
-        decimated_depth = decimation.process(depth_frame)
+        decimated_depth = decimation.process(depth_frame).get_depth_frame()
         if not depth_frame or not aligned_color_frame: continue
 
         color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
