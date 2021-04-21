@@ -28,7 +28,7 @@ else:
 #***OPTION SETTING***
 profile = pipeline.start(config)
 sensor_dep = profile.get_device().first_depth_sensor()
-s = sensor_dep.set_option(rs.option.accuracy, 10)
+s = sensor_dep.set_option(rs.option.contrast, 10)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
