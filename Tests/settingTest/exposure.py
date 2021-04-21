@@ -27,7 +27,7 @@ else:
 #***OPTION SETTING***
 prof = pipeline.start(config)
 s = prof.get_device().query_sensors()[1]
-s.set_option(rs.option.exposure, 1000)
+s.set_option(rs.option.exposure, 10)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
