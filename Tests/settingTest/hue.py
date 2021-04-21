@@ -28,7 +28,7 @@ else:
 #***OPTION SETTING***
 profile = pipeline.start(config)
 s = profile.get_device().query_sensors()[1]
-s = s.set_option(rs.option.contrast, 50) ## *** range: 0 ~100
+s = s.set_option(rs.option.hue, 150) ## *** range: -180 ~ 180
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
