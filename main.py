@@ -22,7 +22,9 @@ else:
     config.enable_stream(rs.stream.color, 640, 360, rs.format.bgr8, 15)
 
 # Start streaming
-pipeline.start(config)
+prof = pipeline.start(config)
+s = prof.get_device().query_sensors()[1]
+s.set_option(rs.option.exposure, 1000)
 
 align_to = rs.stream.depth
 align = rs.align(align_to)
