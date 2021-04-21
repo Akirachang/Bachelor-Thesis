@@ -26,8 +26,9 @@ else:
 
 # Start streaming
 #***OPTION SETTING***
-prof = pipeline.start(config)
-s = device.set_option(rs.option.asic_temperature, 10)
+profile = pipeline.start(config)
+sensor_dep = profile.get_device().first_depth_sensor()
+s = sensor_dep.set_option(rs.option.asic_temperature, 10)
 #***OPTION SETTING***
 
 align_to = rs.stream.depth
