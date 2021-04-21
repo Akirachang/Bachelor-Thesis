@@ -39,10 +39,10 @@ try:
         print(type(aligned_frames))
 
 
-        decimation = (rs.align(align_to)).decimation_filter()
-        decimated_depth = decimation.process(depth_frame)
-        print(type(decimated_depth))
-        decimated_depth_frames = decimated_depth.get_depth_frame()
+        # decimation = rs.decimation_filter()
+        # decimated_depth = decimation.process(depth_frame)
+        # print(type(decimated_depth))
+        # decimated_depth_frames = decimated_depth.get_depth_frame()
         if not depth_frame or not aligned_color_frame: continue
 
         color_intrin = aligned_color_frame.profile.as_video_stream_profile().intrinsics
@@ -52,13 +52,13 @@ try:
         # filtered = dec_filter.process(depth_frame)
         #Use pixel value of  depth-aligned color image to get 3D axes
         x, y = 320, 180
-        depth = getDepth(x,y,decimated_depth)
+        depth = getDepth(x,y,depth_frame)
         distance = getDistance(x,y,color_intrin,depth)
         print("Distance from camera to P1:", distance*100)
         print("Z-depth from camera surface to P1 surface:", depth*100)
 
         x1, y1 = 400, 180
-        depth1 = getDepth(x1,y1,decimated_depth)
+        depth1 = getDepth(x1,y1,depth_frame)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
