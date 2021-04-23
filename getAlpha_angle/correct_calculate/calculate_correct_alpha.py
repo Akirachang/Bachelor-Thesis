@@ -86,7 +86,7 @@ try:
             print("calculated angle is: ", alpha)
             print("correct angle is: ", accurateangle)
             # print("Alpha angle is: ",alpha)
-            display(distance, distance1, pipeline, x1, y1)
+            # display(distance, distance1, pipeline, x1, y1)
             # print("accurate angle is: ",accurateangle)
             # print("alpha is: ",alpha)
             accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
@@ -102,7 +102,7 @@ except Exception as e:
     pass
 
 finally:
-    with open("json/10cm.json", "w") as write_file:
+    with open("json/20cm.json", "w") as write_file:
         json.dump(angle_dict, write_file)
 
     pipeline.stop()
