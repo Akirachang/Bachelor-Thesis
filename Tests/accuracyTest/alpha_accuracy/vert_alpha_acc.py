@@ -49,10 +49,9 @@ try:
         accurateangle = dict_correct[origin_x+i]
         alpha = dict_alpha[origin_x+i]
         accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
-        dict_acc[origin_x+i] = accuracy_alpha
-        
-except Exception as e:
-    print(e)
+        dict_acc[origin_x+i] = accuracy_alpha  
+except:
+    print("error value!")
     pass
 
 finally:
