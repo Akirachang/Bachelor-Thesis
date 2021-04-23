@@ -57,7 +57,7 @@ except:
     pass
 
 finally:
-    with open("json/60cm.json", "w") as write_file:
+    with open("json/30cm.json", "w") as write_file:
         json.dump(dict_acc, write_file)
 
     pipeline.stop()
