@@ -45,7 +45,7 @@ dist_cam_surface =40
 
 #open the json file from Alpha angle json file and convert to dict 
 #TODO
-alpha_file = open('../getAlpha_angle/json/'+str(dist_cam_surface)+'cm.json')
+alpha_file = open('../getAlpha_angle/rs_calculate/json/'+str(dist_cam_surface)+'cm.json')
 dict_alpha = json.load(alpha_file)
 print(dict_alpha)
 
