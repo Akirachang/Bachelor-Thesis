@@ -38,7 +38,7 @@ angle_dict={}
 origin_x = 320
 
 try:
-    for i in range(100,200): #starting from 60cm, only extract 100-150 points. but others extract 100-200
+    for i in range(100,150): #starting from 60cm, only extract 100-150 points. but others extract 100-200
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         
@@ -102,7 +102,7 @@ except Exception as e:
     pass
 
 finally:
-    with open("json/40cm.json", "w") as write_file:
+    with open("json/60cm.json", "w") as write_file:
         json.dump(angle_dict, write_file)
 
     pipeline.stop()
