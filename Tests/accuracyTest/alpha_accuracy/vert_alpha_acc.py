@@ -46,8 +46,8 @@ origin_y = 180
 
 try:
     for i in range(100,200):
-        accurateangle = dict_correct[origin_x+i]
-        alpha = dict_alpha[origin_x+i]
+        accurateangle = dict_correct[str(origin_x+i)]
+        alpha = dict_alpha[str(origin_x+i)]
         print(accurateangle)
         print(alpha)
         accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
