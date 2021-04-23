@@ -38,7 +38,7 @@ angle_dict={}
 origin_x = 320
 
 try:
-    for i in range(100,150): #starting from 60cm, only extract 100-150 points. but others extract 100-200
+    for i in range(100,200): #starting from 60cm, only extract 100-150 points. but others extract 100-200
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         
