@@ -45,7 +45,7 @@ origin_x = 320
 origin_y = 180
 
 try:
-    for i in range(100,200):
+    for i in range(100,150):
         accurateangle = dict_correct[str(origin_x+i)]
         alpha = dict_alpha[str(origin_x+i)]
         print(accurateangle)
@@ -57,7 +57,7 @@ except:
     pass
 
 finally:
-    with open("json/20cm.json", "w") as write_file:
+    with open("json/60cm.json", "w") as write_file:
         json.dump(dict_acc, write_file)
 
     pipeline.stop()
