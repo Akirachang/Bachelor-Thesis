@@ -36,7 +36,7 @@ distanceCM = int(input("enter a distance: "))
 rs_alpha_file = open('../../../getAlpha_angle/rs_calculate/json/'+str(distanceCM)+'cm.json')
 dict_alpha = json.load(rs_alpha_file)
 
-correct_alpha_file = open('../../../getAlpha_angle/rs_calculate/json/'+str(distanceCM)+'cm.json')
+correct_alpha_file = open('../../../getAlpha_angle/correct_calculate/json/'+str(distanceCM)+'cm.json')
 dict_correct = json.load(correct_alpha_file)
     
 dict_acc = {}
