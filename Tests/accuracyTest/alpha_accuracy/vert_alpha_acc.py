@@ -48,6 +48,8 @@ try:
     for i in range(100,200):
         accurateangle = dict_correct[origin_x+i]
         alpha = dict_alpha[origin_x+i]
+        print(accurateangle)
+        print(alpha)
         accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
         dict_acc[origin_x+i] = accuracy_alpha  
 except:
