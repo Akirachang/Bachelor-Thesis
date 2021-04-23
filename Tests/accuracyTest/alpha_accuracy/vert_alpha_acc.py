@@ -38,7 +38,7 @@ dict_alpha = json.load(rs_alpha_file)
 
 correct_alpha_file = open('../../getAlpha_angle/rs_calculate/json/'+str(distanceCM)+'cm.json')
 dict_correct = json.load(correct_alpha_file)
-
+    
 dict_acc = {}
 
 origin_x = 320
@@ -58,18 +58,4 @@ finally:
     with open("json/20cm.json", "w") as write_file:
         json.dump(dict_acc, write_file)
 
-    pipeline.stop()
-
-
-        
-
-
-
-
-
-except Exception as e:
-    print(e)
-    pass
-
-finally:
     pipeline.stop()
