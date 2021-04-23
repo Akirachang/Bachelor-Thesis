@@ -5,6 +5,7 @@ import pyrealsense2.pyrealsense2 as rs
 import numpy as np
 import math
 import cv2
+import json
 from GUI_model import *
 from calc_model import *
 
@@ -33,9 +34,11 @@ align = rs.align(align_to)
 distanceCM = int(input("enter a distance: "))
 pixel_cm = 0.0264583333 
 cm_pixel = 37.7952755906
+angle_dict={}
+origin_x = 320
 
 try:
-    while True:
+    for i in range(100,150): #starting from 60cm, only extract 100-150 points. but others extract 100-200
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         
@@ -61,7 +64,7 @@ try:
         accurateDistance = distanceCM
         accuracy_virtDist = 100-100*((abs(accurateDistance-distance)/accurateDistance))
 
-        x1, y1 = 420, 180
+        x1, y1 = origin_x+i, 180
         depth1 = getDepth(x1,y1,depth_frame)
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
@@ -90,16 +93,16 @@ try:
             accuracy_virtDist = 100-100*((abs(accurateDistance-distance)/accurateDistance))
             print("accuracy of alpha is: ", accuracy_alpha)
             print("accuracy of vertical distance is: ", accuracy_virtDist)
-
         except:
             print("error value!")
-
-
-        display(distance, distance1, pipeline, x1, y1)
+        angle_dict[origin_x+i] = accurateangle
 
 except Exception as e:
     print(e)
     pass
 
 finally:
+    with open("json/10cm.json", "w") as write_file:
+        json.dump(angle_dict, write_file)
+
     pipeline.stop()
