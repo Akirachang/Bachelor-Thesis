@@ -96,7 +96,7 @@ try:
 
             print("accuracy of alpha is: ", accuracy_alpha)
             print("accuracy of M is: ", accuracy_virtDist)
-            print("accuracy of N is: ", accuracy_virtDist)
+            print("accuracy of N is: ", accuracy_virtDist2)
         except:
             print("error value!")
         angle_dict[origin_x+i] = accurateangle
