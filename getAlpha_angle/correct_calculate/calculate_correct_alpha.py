@@ -95,7 +95,8 @@ try:
             accuracy_virtDist2 = 100-100*((abs(accurate_N-distance1)/accurate_N))
 
             print("accuracy of alpha is: ", accuracy_alpha)
-            print("accuracy of vertical distance is: ", accuracy_virtDist)
+            print("accuracy of M is: ", accuracy_virtDist)
+            print("accuracy of N is: ", accuracy_virtDist)
         except:
             print("error value!")
         angle_dict[origin_x+i] = accurateangle
