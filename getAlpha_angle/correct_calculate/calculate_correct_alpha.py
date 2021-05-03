@@ -77,6 +77,7 @@ try:
         dx ,dy, dz = rs.rs2_deproject_pixel_to_point(color_intrin, [x,y], distanceCM/100)
         dx1 ,dy1, dz1 = rs.rs2_deproject_pixel_to_point(color_intrin, [x1,y1], distanceCM/100)
         point_distance_px = math.sqrt(((dx-dx1)**2) + ((dy-dy1)**2) + ((dz-dz1)**2))
+        accurate_N = math.sqrt(((dx1)**2) + ((dy1)**2) + ((dz1)**2))
 
 
         #calcurate alpha angle
@@ -91,6 +92,8 @@ try:
             # print("alpha is: ",alpha)
             accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
             accuracy_virtDist = 100-100*((abs(accurateDistance-distance)/accurateDistance))
+            accuracy_virtDist2 = 100-100*((abs(accurate_N-distance1)/accurate_N))
+
             print("accuracy of alpha is: ", accuracy_alpha)
             print("accuracy of vertical distance is: ", accuracy_virtDist)
         except:
@@ -102,7 +105,7 @@ except Exception as e:
     pass
 
 finally:
-    with open("json/70cm.json", "w") as write_file:
-        json.dump(angle_dict, write_file)
+    # with open("json/90cm.json", "w") as write_file:
+    #     json.dump(angle_dict, write_file)
 
     pipeline.stop()
