@@ -2,20 +2,20 @@
 import matplotlib.pyplot as plt
 import json
 
-plt.ylim(90, 100)
+plt.ylim(80, 100)
 
 # x axis values
 x = []
 # corresponding y axis values
 y = []
 
-dist_cam_surface = 40
+dist_cam_surface = 60
 alpha_file = open('../../Tests/accuracyTest/alpha_accuracy/json/'+str(dist_cam_surface)+'cm.json')
 dict_alpha = json.load(alpha_file)
 
 origin_x = 320
 
-for i in range(100,200):
+for i in range(100,150):
     x.append(origin_x+i)
     y.append(dict_alpha[str(origin_x+i)])
 
@@ -23,12 +23,12 @@ for i in range(100,200):
 plt.plot(x, y,'ro')
   
 # naming the x axis
-plt.xlabel('x - axis')
+plt.xlabel('x - axis: x pixel')
 # naming the y axis
-plt.ylabel('y - axis')
+plt.ylabel('y - axis: accuracy')
   
 # giving a title to my graph
-plt.title('My first graph!')
+plt.title("L = "+str(dist_cam_surface)+"cm")
   
 # function to show the plot
 plt.show()
