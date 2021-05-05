@@ -33,10 +33,14 @@ align = rs.align(align_to)
 
 distanceCM = int(input("enter a distance: "))
 
-rs_alpha_file = open('../../../getAlpha_angle/rs_calculate/json/'+str(distanceCM)+'cm.json')
+# rs_alpha_file = open('../../../getAlpha_angle/rs_calculate/json/'+str(distanceCM)+'cm.json')
+correct_alpha_file = open('../../../getAlpha_angle/correct_calculate/json/60cm-exposuretest.json')
+
 dict_alpha = json.load(rs_alpha_file)
 
 correct_alpha_file = open('../../../getAlpha_angle/correct_calculate/json/'+str(distanceCM)+'cm.json')
+
+
 dict_correct = json.load(correct_alpha_file)
     
 dict_acc = {}
@@ -57,7 +61,7 @@ except:
     pass
 
 finally:
-    with open("json/40cm.json", "w") as write_file:
+    with open("json/60cm-exposuretest.json", "w") as write_file:
         json.dump(dict_acc, write_file)
 
     pipeline.stop()
