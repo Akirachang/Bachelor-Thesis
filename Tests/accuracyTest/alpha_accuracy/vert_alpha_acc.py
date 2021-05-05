@@ -49,7 +49,7 @@ origin_x = 320
 origin_y = 180
 
 try:
-    for i in range(100,200):
+    for i in range(100,150):
         accurateangle = dict_correct[str(origin_x+i)]
         alpha = dict_alpha[str(origin_x+i)]
         print(accurateangle)
