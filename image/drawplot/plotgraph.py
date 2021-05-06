@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import json
 
-plt.ylim(80, 100)
+plt.ylim(50, 100)
 
 # x axis values
 x = []
@@ -10,7 +10,7 @@ x = []
 y = []
 
 dist_cam_surface = 60
-alpha_file = open('../../Tests/accuracyTest/alpha_accuracy/json/'+str(dist_cam_surface)+'cm.json')
+alpha_file = open('../../Tests/accuracyTest/alpha_accuracy/json/60cm-exposuretest.json')
 dict_alpha = json.load(alpha_file)
 
 origin_x = 320
