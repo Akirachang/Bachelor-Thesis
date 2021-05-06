@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import json
 
-plt.ylim(50, 100)
+plt.ylim(80, 100)
 
 # x axis values
 x = []
