@@ -56,30 +56,30 @@ try:
             x, y = 320, 180
             depth = getDepth(x,y,depth_frame)
             distance = getDistance(x,y,color_intrin,depth)
-            print("Distance from camera to P1:", distance*100)
-            print("Z-depth from camera surface to P1 surface:", depth*100)
+            # print("Distance from camera to P1:", distance*100)
+            # print("Z-depth from camera surface to P1 surface:", depth*100)
 
             x1, y1 = origin_x+i, 180
             depth1 = getDepth(x1,y1,depth_frame)
             distance1 = getDistance(x1,y1,color_intrin,depth1)
-            print("Distance from camera to P2:", distance1*100)
-            print("Z-depth from camera surface to P2 surface:", depth1*100)
+            # print("Distance from camera to P2:", distance1*100)
+            # print("Z-depth from camera surface to P2 surface:", depth1*100)
 
             #calculate Alpha angle
             try:
-                print((math.acos(distance/distance1)))
+                # print((math.acos(distance/distance1)))
                 alpha = math.degrees((math.acos(distance/distance1)))
                 sum+=alpha
-                print("Alpha angle is: ",alpha)
+                # print("Alpha angle is: ",alpha)
                 display(distance, distance1, pipeline, x1, y1)
             except:
-                print("error value!")
+                # print("error value!")
         average = sum/100
         angle_dict[origin_x+i] = average
-    print(angle_dict)
+    # print(angle_dict)
 
 except Exception as e:
-    print(e)
+    # print(e)
     pass
 
 finally:
