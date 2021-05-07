@@ -10,7 +10,7 @@ x = []
 y = []
 
 dist_cam_surface = 60
-alpha_file = open('../../Tests/accuracyTest/alpha_accuracy/json/60cm-exposuretest.json')
+alpha_file = open('../../Tests/accuracyTest/alpha_accuracy/json/70cm-exposuretest.json')
 dict_alpha = json.load(alpha_file)
 
 origin_x = 320
