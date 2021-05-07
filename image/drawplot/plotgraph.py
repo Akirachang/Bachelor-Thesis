@@ -15,7 +15,7 @@ dict_alpha = json.load(alpha_file)
 
 origin_x = 320
 
-for i in range(100,150):
+for i in range(100,120):
     x.append(origin_x+i)
     y.append(dict_alpha[str(origin_x+i)])
 
