@@ -36,7 +36,7 @@ angle_dict={}
 origin_x = 320
 
 try:
-    for i in range(100,150): #starting from 60cm, only extract 100-150 points. but others extract 100-200
+    for i in range(100,140): #starting from 60cm, only extract 100-150 points. but others extract 100-200
         sum = 0 #sum of all the angles combined
         for j in range(0,100):
             # This call waits until a new coherent set of frames is available on a device
