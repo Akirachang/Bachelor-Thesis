@@ -88,6 +88,7 @@ try:
             print("hi")
             BetaAngle = math.degrees(math.atan((math.cos(alpha)*distance1-depth)/(math.sin(alpha)*distance1)))
             print("*****Beta angle is ", BetaAngle)
+            angle_dict[x1]=BetaAngle
         except:
             print("error value!")
     
