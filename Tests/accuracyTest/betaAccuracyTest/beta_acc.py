@@ -48,14 +48,17 @@ dict_acc = {}
 origin_x = 320
 origin_y = 180
 
-try:
-    for i in range(100,200):
+
+for i in range(100,200):
+    try:
         accurateangle = correctAngle
         alpha = dict_alpha[str(origin_x+i)]
         print(accurateangle)
         print(alpha)
         accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
         dict_acc[origin_x+i] = accuracy_alpha  
+    except:
+        print("error")
 
 
 finally:
