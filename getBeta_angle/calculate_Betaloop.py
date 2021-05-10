@@ -52,7 +52,6 @@ print(dict_alpha)
 x1 = 420
 y1 = 180
 
-alpha = math.radians(dict_alpha[str(x1)])
 
 #****************************************************
 
@@ -82,6 +81,7 @@ try:
         distance1 = getDistance(x1,y1,color_intrin,depth1)
         print("Distance from camera to P2:", distance1*100)
         print("Z-depth from camera surface to P2 surface:", depth1*100)
+        alpha = math.radians(dict_alpha[str(x1)])
 
         #calculate Alpha angle
         try:
