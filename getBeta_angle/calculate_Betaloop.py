@@ -56,7 +56,7 @@ y1 = 180
 #****************************************************
 
 try:
-    for i in range(100,150):
+    for i in range(100,200):
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         
