@@ -56,9 +56,7 @@ try:
         print(alpha)
         accuracy_alpha = 100.0-100.0*((abs(accurateangle-alpha)/accurateangle))
         dict_acc[origin_x+i] = accuracy_alpha  
-except:
-    print("error value!")
-    pass
+
 
 finally:
     with open('json/'+str(distanceCM)+'.json', "w") as write_file:
