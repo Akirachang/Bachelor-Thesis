@@ -61,8 +61,7 @@ for i in range(100,200):
         print("error")
 
 
-finally:
-    with open('json/'+str(distanceCM)+'.json', "w") as write_file:
-        json.dump(dict_acc, write_file)
+with open('json/'+str(distanceCM)+'.json', "w") as write_file:
+    json.dump(dict_acc, write_file)
 
-    pipeline.stop()
+pipeline.stop()
