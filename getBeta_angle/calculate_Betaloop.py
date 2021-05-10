@@ -41,7 +41,7 @@ origin_x = 320
 origin_x = 320
 
 #distance from camera to the flat surface
-dist_cam_surface = 50
+dist_cam_surface = 60
 
 #open the json file from Alpha angle json file and convert to dict 
 alpha_file = open('../getAlpha_angle/rs_calculate/json/'+str(dist_cam_surface)+'cm.json')
@@ -56,7 +56,7 @@ y1 = 180
 #****************************************************
 
 try:
-    for i in range(100,200):
+    for i in range(100,150):
         # This call waits until a new coherent set of frames is available on a device
         frames = pipeline.wait_for_frames()
         
