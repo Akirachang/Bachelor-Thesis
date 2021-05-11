@@ -41,7 +41,7 @@ origin_x = 320
 origin_x = 320
 
 #distance from camera to the flat surface
-dist_cam_surface = 70
+dist_cam_surface = int(input("enter a distance: "))
 
 #open the json file from Alpha angle json file and convert to dict 
 alpha_file = open('../getAlpha_angle/correct_calculate/json/'+str(dist_cam_surface)+'cm.json')
